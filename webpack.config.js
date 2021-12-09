@@ -1,60 +1,66 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = function (env, argv) {
   return {
     context: __dirname,
-    entry: "./src/index.tsx",
-    mode: "development",
-    devtool: "inline-source-map",
+    entry: './src/index.tsx',
+    mode: 'development',
+    devtool: 'inline-source-map',
     module: {
       rules: [
         {
           test: /\.(ts|js)x?$/i,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               presets: [
-                "@babel/preset-env",
-                "@babel/preset-react",
-                "@babel/preset-typescript",
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript',
               ],
             },
           },
         },
+        {
+          test: /\.s?[ac]ss$/,
+          use: [
+            'style-loader', 'css-loader', 'sass-loader'
+          ]
+        }
       ],
     },
     resolve: {
-      extensions: [".tsx", ".ts", ".js"],
+      extensions: ['.tsx', '.ts', '.js'],
       fallback: {
         vm: false,
       },
     },
     output: {
-      path: path.resolve(__dirname, "dist"),
-      publicPath: "",
-      chunkFilename: "main.js",
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '',
+      chunkFilename: 'main.js',
     },
     devServer: {
-      host: "localhost",
-      port: "3000",
+      host: 'localhost',
+      port: '3000',
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Origin': '*',
       },
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./public/index.html",
+        template: './public/index.html',
       }),
       new CleanWebpackPlugin(),
       new FaviconsWebpackPlugin({
-        logo: "favicon.ico",
+        logo: 'favicon.ico',
         favicons: {
-          appName: "my-app",
-          appDescription: "My awesome App",
+          appName: 'my-app',
+          appDescription: 'My awesome App',
           icons: {
             coast: false,
             yandex: false,
