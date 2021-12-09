@@ -8,7 +8,7 @@
 git clone https://github.com/GarciST/react-typescript-boilerplate.git
 ```
 
- - Intall dependecies
+ - Install dependecies
  ```
  npm install
  ```
