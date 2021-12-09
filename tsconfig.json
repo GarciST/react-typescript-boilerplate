@@ -1,15 +1,26 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "commonjs",
-      "target": "esnext",
-      "jsx": "react",
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "moduleResolution": "node",
-      "declaration": true,
-      "emitDeclarationOnly": true,
-      "isolatedModules": true
-    }
-  }
+  "compilerOptions": {
+    "outDir": "./tsc-output/",
+    "lib": ["dom", "esnext"],
+    "noImplicitOverride": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "test/**/*",
+    "src/**/*",
+    "**/.eslintrc.js",
+    "webpack.config.js"
+  ],
+  "exclude": ["node_modules"]
+}

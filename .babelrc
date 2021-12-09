@@ -4,10 +4,14 @@
             "@babel/preset-env",
             {
                 "useBuiltIns": "usage",
-                "corejs": "3.6.5"
+                "corejs": "3.6.5",
+                "debug": false
             }
         ],
         "@babel/preset-react",
         "@babel/preset-typescript"
+    ],
+    "plugins": [
+        ["@babel/transform-runtime"]
     ]
 }
