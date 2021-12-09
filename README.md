@@ -1,5 +1,7 @@
 # React boilerplate 🚀
 
+[![Tests](https://github.com/GarciST/react-typescript-boilerplate/actions/workflows/tests.yml/badge.svg)](https://github.com/GarciST/react-typescript-boilerplate/actions/workflows/tests.yml)
+
 ## How to start
  - Clone project
 ```
