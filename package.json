@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack serve --mode development",
-    "test": "mocha --config .mocharc.json",
-    "build": "webpack"
+    "test": "mocha"
   },
   "author": "Santiago",
   "license": "ISC",
