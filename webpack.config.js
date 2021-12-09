@@ -1,9 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = function (env, argv) {
-
   return {
     context: __dirname,
     entry: "./src/index.tsx",
@@ -23,8 +23,8 @@ module.exports = function (env, argv) {
                 "@babel/preset-typescript",
               ],
             },
-          }
-        }
+          },
+        },
       ],
     },
     resolve: {
@@ -47,9 +47,20 @@ module.exports = function (env, argv) {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './public/index.html'
+        template: "./public/index.html",
       }),
-      new CleanWebpackPlugin()
+      new CleanWebpackPlugin(),
+      new FaviconsWebpackPlugin({
+        logo: "favicon.ico",
+        favicons: {
+          appName: "my-app",
+          appDescription: "My awesome App",
+          icons: {
+            coast: false,
+            yandex: false,
+          },
+        },
+      }),
     ],
   };
 };
