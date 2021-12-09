@@ -6,5 +6,5 @@
   "slow": "75",
   "timeout": "2000",
   "ui": "bdd",
-  "require": ["global-jsdom/register", "@babel/register", "@babel/polyfill", "ts-node/register"]
+  "require": ["global-jsdom/register", "@babel/register", "@babel/polyfill", "ts-node/register", "ignore-styles"]
 }
